@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ho Dac Quang - CV</title>
+<style>
+  :root{
+    --navy:#1b2a41;
+    --navy-deep:#0f1d30;
+    --teal:#1f6f78;
+    --teal-light:#2a8a94;
+    --ink:#2b2f36;
+    --muted:#5b6470;
+    --line:#e3e7ec;
+    --paper:#ffffff;
+    --side-ink:#3d4654;
+    --side-muted:#5b6470;
+    --side-bg:#eef1f5;
+    --side-line:#d6dce3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#e9edf2;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+  .page{
+    width:210mm;min-height:297mm;margin:14px auto;background:var(--paper);
+    display:grid;grid-template-columns:67mm 1fr;
+    box-shadow:0 6px 28px rgba(20,30,45,.18);overflow:hidden;
+  }
+
+  .side{background:var(--side-bg);color:var(--side-ink);padding:0 0 24px;border-right:1px solid #e0e4ea}
+  .photo-wrap{padding:16px 16px 8px;text-align:center}
+  .photo{width:135px;height:135px;border-radius:50%;object-fit:cover;object-position:center 22%;border:3px solid var(--teal);box-shadow:0 2px 8px rgba(27,42,65,.16);image-rendering:auto}
+  .side-section{padding:9px 20px 2px}
+  .side-h{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:7px;padding-bottom:5px;border-bottom:1.5px solid var(--side-line);position:relative}
+  .side-h::after{content:"";position:absolute;left:0;bottom:-1.5px;width:32px;height:1.5px;background:var(--teal)}
+
+  .contact-row{display:flex;gap:8px;align-items:flex-start;font-size:11px;color:var(--side-ink);margin-bottom:6px;line-height:1.3;word-break:break-word}
+  .contact-row .ic{flex:0 0 15px;color:var(--teal);font-size:11.5px;margin-top:1px}
+
+  .skill-group{margin-bottom:7px}
+  .skill-group .sg-title{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px}
+  .skill-group ul{list-style:none}
+  .skill-group li{font-size:10.6px;color:var(--side-muted);line-height:1.4;padding-left:11px;position:relative}
+  .skill-group li::before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:var(--teal)}
+
+  .edu-item{margin-bottom:7px}
+  .edu-item .e-school{font-size:11.4px;font-weight:700;color:var(--navy)}
+  .edu-item .e-year{font-size:10.2px;color:var(--teal);font-weight:600;margin:1px 0 1px}
+  .edu-item .e-degree{font-size:10.7px;color:var(--side-muted);line-height:1.35}
+
+  .strength-list{list-style:none}
+  .strength-list li{font-size:11px;color:var(--side-muted);line-height:1.45;padding-left:12px;position:relative;margin-bottom:5px}
+  .strength-list li::before{content:"▹";position:absolute;left:0;top:0;color:var(--teal);font-size:11px}
+
+  .main{padding:30px 30px 26px}
+  .name{font-size:31px;font-weight:800;letter-spacing:.5px;color:var(--navy);line-height:1.05}
+  .role{font-size:14px;color:var(--teal);font-weight:600;letter-spacing:.4px;margin-top:5px;text-transform:uppercase}
+  .name-rule{height:3px;width:60px;background:var(--teal);margin:12px 0 0;border-radius:2px}
+
+  .m-section{margin-top:22px}
+  .m-h{font-size:14px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .m-h .bar{width:5px;height:18px;background:var(--teal);border-radius:2px;display:inline-block}
+
+  .summary{font-size:12.3px;line-height:1.6;color:var(--muted);text-align:justify}
+  .summary b{color:var(--ink)}
+
+  .xp{position:relative;padding-left:22px}
+  .xp::before{content:"";position:absolute;left:4px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .job{position:relative;padding-top:16px}
+  .job:first-child{padding-top:0}
+  .job::before{content:"";position:absolute;box-sizing:border-box;left:-23px;top:19px;width:12px;height:12px;border-radius:50%;background:#fff;border:2.5px solid var(--teal)}
+  .job:first-child::before{top:3px}
+  .job-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .job-title{font-size:13px;font-weight:700;color:var(--navy)}
+  .job-date{font-size:10.7px;color:#fff;background:var(--teal);padding:2px 9px;border-radius:11px;white-space:nowrap;font-weight:600}
+  .job-co{font-size:11.6px;font-weight:600;color:var(--teal);margin:2px 0 6px}
+  .proj-label{font-size:10.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--teal);margin:1px 0 5px}
+  .proj-desc{font-size:11.2px;color:var(--muted);line-height:1.45;margin:0 0 8px}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 9px}
+  .proj-tags span{font-size:10.2px;color:var(--teal);background:#eef6f7;border:1px solid #d2e4e6;border-radius:4px;padding:2px 8px;line-height:1.35}
+  .job ul{list-style:none;margin-top:3px}
+  .job li{font-size:11.3px;color:var(--ink);line-height:1.5;padding-left:14px;position:relative;margin-bottom:3px}
+  .job li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:1px;background:var(--teal-light)}
+
+  @page{size:A4;margin:0}
+  @media print{
+    html,body{background:#fff}
+    .page{margin:0;box-shadow:none;width:210mm;min-height:297mm;overflow:visible}
+    .job, .skill-group, .edu-item{break-inside:avoid}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+  .hint{max-width:210mm;margin:8px auto 22px;font-size:12px;color:#5b6470;text-align:center}
+  @media print{.hint{display:none}}
+
+  .lang-switch{position:fixed;top:14px;right:14px;z-index:99;display:flex;background:#fff;border:1px solid #d6dce3;border-radius:999px;box-shadow:0 3px 12px rgba(20,30,45,.18);overflow:hidden;font-family:"Segoe UI",Roboto,Arial,sans-serif}
+  .lang-switch a{padding:7px 16px;font-size:12px;font-weight:700;letter-spacing:.6px;color:#5b6470;text-decoration:none;transition:background .15s,color .15s}
+  .lang-switch a.active{background:var(--teal);color:#fff}
+  .lang-switch a:not(.active):hover{background:#eef6f7;color:var(--teal)}
+  @media print{.lang-switch{display:none}}
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="index.html">VN</a>
+  <a href="en.html" class="active">EN</a>
+</div>
+
+<div class="page">
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <div class="photo-wrap">
+      <img class="photo" src="anhcanhan.jpg" alt="Ho Dac Quang">
+    </div>
+
+    <div class="side-section">
+      <div class="side-h">Contact</div>
+      <div class="contact-row"><span class="ic">☎</span><span>(+84) 703 616 398</span></div>
+      <div class="contact-row"><span class="ic">✉</span><span>hodacquang8182@gmail.com</span></div>
+      <div class="contact-row"><span class="ic">⌂</span><span>Thu Duc, Ho Chi Minh City</span></div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-h">Skills</div>
+
+      <div class="skill-group">
+        <div class="sg-title">Business Analysis</div>
+        <ul>
+          <li>Requirements elicitation &amp; analysis</li>
+          <li>BRD / SRS / FRS documentation</li>
+          <li>Wireframe, mockup, process design</li>
+          <li>Dev / QC collaboration across SDLC</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Project Management</div>
+        <ul>
+          <li>Planning, scope &amp; resourcing</li>
+          <li>Schedule &amp; delivery-team management</li>
+          <li>Risk management, UAT, Go-live</li>
+          <li>Reporting to leadership</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Business Domains</div>
+        <ul>
+          <li>Fulfillment / WMS / OMS</li>
+          <li>HRM · ERP · F&amp;B</li>
+          <li>CRM / Loyalty</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Tools &amp; AI</div>
+        <ul>
+          <li>Jira / Confluence (Agile · Scrum)</li>
+          <li>Figma · Microsoft Visio</li>
+          <li>SQL Server · MS Office · Google Workspace</li>
+          <li>AI Tools: Claude, Gemini</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-h">Education</div>
+      <div class="edu-item">
+        <div class="e-school">UEH — Univ. of Economics HCMC</div>
+        <div class="e-year">2024 – Present</div>
+        <div class="e-degree">Master of Technology Management</div>
+      </div>
+      <div class="edu-item">
+        <div class="e-school">Hoa Sen University (HSU)</div>
+        <div class="e-year">2016 – 2020</div>
+        <div class="e-degree">B.Sc. Management Information Systems</div>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-h">Certifications</div>
+      <div class="skill-group">
+        <div class="sg-title">Anthropic Education · 2026</div>
+        <ul>
+          <li><a href="https://verify.skilljar.com/c/pqbatgscu45p" style="color:inherit;text-decoration:none">AI Fluency: Framework &amp; Foundations ↗</a></li>
+          <li><a href="https://verify.skilljar.com/c/qtfq2hedczez" style="color:inherit;text-decoration:none">Claude 101 ↗</a></li>
+          <li><a href="https://verify.skilljar.com/c/di9u3qqmf2bd" style="color:inherit;text-decoration:none">Claude Code 101 ↗</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header>
+      <div class="name">HO DAC QUANG</div>
+      <div class="role">Business Analyst &amp; Software Implementation Lead</div>
+      <div class="name-rule"></div>
+    </header>
+
+    <section class="m-section">
+      <div class="m-h"><span class="bar"></span>Career Objective</div>
+      <p class="summary">
+        With over <b>5 years of experience</b> in IT, I have accompanied numerous digital-transformation
+        projects in a variety of roles — from business analysis to delivery coordination. I focus on
+        <b>building effective operational solutions</b> and <b>embedding AI into the product-development process</b>,
+        striving to continually sharpen my expertise and deliver lasting value to the organization.
+      </p>
+    </section>
+
+    <section class="m-section">
+      <div class="m-h"><span class="bar"></span>Work Experience</div>
+      <div class="xp">
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Business Analyst cum Product Engineer</div>
+            <div class="job-date">10/2025 – Present</div>
+          </div>
+          <div class="job-co">Hasaki Vietnam JSC — R&amp;D Product Team</div>
+          <div class="proj-label">Key Project</div>
+          <div class="proj-desc">Fulfillment Service — B2B order fulfillment system.</div>
+          <ul>
+            <li>Research and apply AI (Claude) across the analysis &amp; product-development process: requirements analysis, functional specs, prompt/AI Agent design, and documentation.</li>
+            <li>Help build the multi-domain Fulfillment (3PL) platform from its early stage, standardizing warehouse – order – customer processes.</li>
+            <li>Survey real operations; analyze &amp; design system business processes (WMS/OMS) and model the workflows.</li>
+            <li>Collaborate with BOM, PO, UI/UX, Dev, QC under Agile/Scrum to meet each sprint's timeline &amp; goals.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Business Analyst &amp; Project Manager</div>
+            <div class="job-date">07/2024 – 09/2025</div>
+          </div>
+          <div class="job-co">THISO Int'l Trading &amp; Service JSC (THACO Group) — IT Dept.</div>
+          <div class="proj-label">Key Projects</div>
+          <div class="proj-tags">
+            <span>ERP</span>
+            <span>Supply Mgmt – Thiskyhall</span>
+            <span>F&amp;B Operations – RedJunk, Cafe Beso</span>
+            <span>Equipment Mgmt &amp; Maintenance – Thiso Mall</span>
+            <span>Administration</span>
+            <span>HR Management – Thiskyhall</span>
+            <span>CRM-Loyalty Thiso</span>
+          </div>
+          <ul>
+            <li>Survey and interview departments; perform business analysis and prepare solution documentation (BRD/SRS, process-flow diagrams).</li>
+            <li>Own the analysis &amp; implementation of in-house developed systems; manage projects and closely track progress for vendor-purchased solutions.</li>
+            <li>Analyze cross-department processes and propose restructuring for digital transformation.</li>
+            <li>Build the ERP rollout plan; run training, UAT, change management and operations support; report progress to leadership.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Software Implementation Team Leader</div>
+            <div class="job-date">12/2022 – 05/2024</div>
+          </div>
+          <div class="job-co">Viet Nang Knowledge Resources JSC (VNRESOURCE)</div>
+          <div class="proj-label">Key Projects · HRM Rollout</div>
+          <div class="proj-tags">
+            <span>LongHuei Vietnam Co., Ltd.</span>
+            <span>VietCap Securities JSC</span>
+          </div>
+          <ul>
+            <li>Gather, analyze requirements and advise solutions; prepare rollout documentation (BRD/SRS, process diagrams).</li>
+            <li>Design &amp; execute data migration from legacy systems to HRM, ensuring data integrity.</li>
+            <li>Manage the delivery team, track progress and control risks; support UAT, go-live &amp; stabilization.</li>
+            <li>Train, guide users and manage change throughout operations.</li>
+            <li>Support product operations after go-live.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Software Implementation Officer</div>
+            <div class="job-date">03/2021 – 11/2022</div>
+          </div>
+          <div class="job-co">Viet Nang Knowledge Resources Co., Ltd. (VNRESOURCE)</div>
+          <div class="proj-label">Key Projects · HRM Rollout</div>
+          <div class="proj-tags">
+            <span>An Phuoc Garment &amp; Footwear Co., Ltd.</span>
+            <span>Thuan Phuong Garment Group</span>
+          </div>
+          <ul>
+            <li>Roll out HRM software; support UAT, go-live and end users throughout operations.</li>
+            <li>Work with the Product team to analyze &amp; resolve user requests.</li>
+            <li>Support product operations after go-live.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Business Analyst</div>
+            <div class="job-date">08/2020 – 12/2020</div>
+          </div>
+          <div class="job-co">FPT Information System (FIS)</div>
+          <ul>
+            <li>Gather requirements; design workflows, use-cases and system documentation.</li>
+            <li>Collaborate with Dev to build features.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>
+
+<p class="hint">💡 Export PDF: press <b>Ctrl + P</b> → <b>"Save as PDF"</b> → Margins: <b>None</b> · enable <b>Background graphics</b>. (This hint is hidden in the PDF)</p>
+
+</body>
+</html>

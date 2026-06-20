@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hồ Đắc Quang - CV</title>
+<style>
+  :root{
+    --navy:#1b2a41;
+    --navy-deep:#0f1d30;
+    --teal:#1f6f78;
+    --teal-light:#2a8a94;
+    --ink:#2b2f36;
+    --muted:#5b6470;
+    --line:#e3e7ec;
+    --paper:#ffffff;
+    --side-ink:#3d4654;
+    --side-muted:#5b6470;
+    --side-bg:#eef1f5;
+    --side-line:#d6dce3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#e9edf2;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+  .page{
+    width:210mm;min-height:297mm;margin:14px auto;background:var(--paper);
+    display:grid;grid-template-columns:67mm 1fr;
+    box-shadow:0 6px 28px rgba(20,30,45,.18);overflow:hidden;
+  }
+
+  .side{background:var(--side-bg);color:var(--side-ink);padding:0 0 24px;border-right:1px solid #e0e4ea}
+  .photo-wrap{padding:16px 16px 8px;text-align:center}
+  .photo{width:135px;height:135px;border-radius:50%;object-fit:cover;object-position:center 22%;border:3px solid var(--teal);box-shadow:0 2px 8px rgba(27,42,65,.16);image-rendering:auto}
+  .side-section{padding:9px 20px 2px}
+  .side-h{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:7px;padding-bottom:5px;border-bottom:1.5px solid var(--side-line);position:relative}
+  .side-h::after{content:"";position:absolute;left:0;bottom:-1.5px;width:32px;height:1.5px;background:var(--teal)}
+
+  .contact-row{display:flex;gap:8px;align-items:flex-start;font-size:11px;color:var(--side-ink);margin-bottom:6px;line-height:1.3;word-break:break-word}
+  .contact-row .ic{flex:0 0 15px;color:var(--teal);font-size:11.5px;margin-top:1px}
+
+  .skill-group{margin-bottom:7px}
+  .skill-group .sg-title{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px}
+  .skill-group ul{list-style:none}
+  .skill-group li{font-size:10.6px;color:var(--side-muted);line-height:1.4;padding-left:11px;position:relative}
+  .skill-group li::before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:var(--teal)}
+
+  .edu-item{margin-bottom:7px}
+  .edu-item .e-school{font-size:11.4px;font-weight:700;color:var(--navy)}
+  .edu-item .e-year{font-size:10.2px;color:var(--teal);font-weight:600;margin:1px 0 1px}
+  .edu-item .e-degree{font-size:10.7px;color:var(--side-muted);line-height:1.35}
+
+  .strength-list{list-style:none}
+  .strength-list li{font-size:11px;color:var(--side-muted);line-height:1.45;padding-left:12px;position:relative;margin-bottom:5px}
+  .strength-list li::before{content:"▹";position:absolute;left:0;top:0;color:var(--teal);font-size:11px}
+
+  .main{padding:30px 30px 26px}
+  .name{font-size:31px;font-weight:800;letter-spacing:.5px;color:var(--navy);line-height:1.05}
+  .role{font-size:13.5px;color:var(--teal);font-weight:600;letter-spacing:.3px;margin-top:5px;text-transform:uppercase}
+  .name-rule{height:3px;width:60px;background:var(--teal);margin:12px 0 0;border-radius:2px}
+
+  .m-section{margin-top:22px}
+  .m-h{font-size:14px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .m-h .bar{width:5px;height:18px;background:var(--teal);border-radius:2px;display:inline-block}
+
+  .summary{font-size:12.3px;line-height:1.6;color:var(--muted);text-align:justify}
+  .summary b{color:var(--ink)}
+
+  .proj-label{font-size:10.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--teal);margin:1px 0 5px}
+  .proj-desc{font-size:11.2px;color:var(--muted);line-height:1.45;margin:0 0 8px}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 9px}
+  .proj-tags span{font-size:10.2px;color:var(--teal);background:#eef6f7;border:1px solid #d2e4e6;border-radius:4px;padding:2px 8px;line-height:1.35}
+
+  .xp{position:relative;padding-left:22px}
+  .xp::before{content:"";position:absolute;left:4px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .job{position:relative;padding-top:16px}
+  .job:first-child{padding-top:0}
+  .job::before{content:"";position:absolute;box-sizing:border-box;left:-23px;top:19px;width:12px;height:12px;border-radius:50%;background:#fff;border:2.5px solid var(--teal)}
+  .job:first-child::before{top:3px}
+  .job-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .job-title{font-size:13px;font-weight:700;color:var(--navy)}
+  .job-date{font-size:10.7px;color:#fff;background:var(--teal);padding:2px 9px;border-radius:11px;white-space:nowrap;font-weight:600}
+  .job-co{font-size:11.6px;font-weight:600;color:var(--teal);margin:2px 0 6px}
+  .job ul{list-style:none;margin-top:3px}
+  .job li{font-size:11.3px;color:var(--ink);line-height:1.5;padding-left:14px;position:relative;margin-bottom:3px}
+  .job li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:1px;background:var(--teal-light)}
+
+  @page{size:A4;margin:0}
+  @media print{
+    html,body{background:#fff}
+    .page{margin:0;box-shadow:none;width:210mm;min-height:297mm;overflow:visible}
+    .job, .skill-group, .edu-item{break-inside:avoid}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+  .hint{max-width:210mm;margin:8px auto 22px;font-size:12px;color:#5b6470;text-align:center}
+  @media print{.hint{display:none}}
+
+  .lang-switch{position:fixed;top:14px;right:14px;z-index:99;display:flex;background:#fff;border:1px solid #d6dce3;border-radius:999px;box-shadow:0 3px 12px rgba(20,30,45,.18);overflow:hidden;font-family:"Segoe UI",Roboto,Arial,sans-serif}
+  .lang-switch a{padding:7px 16px;font-size:12px;font-weight:700;letter-spacing:.6px;color:#5b6470;text-decoration:none;transition:background .15s,color .15s}
+  .lang-switch a.active{background:var(--teal);color:#fff}
+  .lang-switch a:not(.active):hover{background:#eef6f7;color:var(--teal)}
+  @media print{.lang-switch{display:none}}
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="index.html" class="active">VN</a>
+  <a href="en.html">EN</a>
+</div>
+
+<div class="page">
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <div class="photo-wrap">
+      <img class="photo" src="anhcanhan.jpg" alt="Hồ Đắc Quang">
+    </div>
+
+    <div class="side-section">
+      <div class="side-h">Liên hệ</div>
+      <div class="contact-row"><span class="ic">☎</span><span>0703 616 398</span></div>
+      <div class="contact-row"><span class="ic">✉</span><span>hodacquang8182@gmail.com</span></div>
+      <div class="contact-row"><span class="ic">⌂</span><span>Thủ Đức, TP. Hồ Chí Minh</span></div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-h">Kỹ năng</div>
+
+      <div class="skill-group">
+        <div class="sg-title">Phân tích nghiệp vụ (BA)</div>
+        <ul>
+          <li>Khảo sát &amp; phân tích yêu cầu</li>
+          <li>Thiết kế tài liệu BRD / SRS / FRS</li>
+          <li>Wireframe, mockup, thiết kế quy trình</li>
+          <li>Phối hợp Dev / QC suốt vòng phát triển</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Quản lý &amp; Điều phối dự án</div>
+        <ul>
+          <li>Lập kế hoạch, phạm vi &amp; nguồn lực</li>
+          <li>Quản lý tiến độ &amp; đội ngũ triển khai</li>
+          <li>Quản lý rủi ro, UAT, Go-live</li>
+          <li>Báo cáo cho các cấp lãnh đạo</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Lĩnh vực nghiệp vụ</div>
+        <ul>
+          <li>Fulfillment / WMS / OMS</li>
+          <li>HRM · ERP · F&amp;B</li>
+          <li>CRM / Loyalty</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-title">Công cụ &amp; AI</div>
+        <ul>
+          <li>Jira / Confluence (Agile · Scrum)</li>
+          <li>Figma · Microsoft Visio</li>
+          <li>SQL Server · MS Office · Google Workspace</li>
+          <li>AI Tools: Claude, Gemini</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-h">Học vấn</div>
+      <div class="edu-item">
+        <div class="e-school">ĐH Kinh tế TP.HCM (UEH)</div>
+        <div class="e-year">2024 – Hiện tại</div>
+        <div class="e-degree">Thạc sĩ Quản trị công nghệ</div>
+      </div>
+      <div class="edu-item">
+        <div class="e-school">ĐH Hoa Sen (HSU)</div>
+        <div class="e-year">2016 – 2020</div>
+        <div class="e-degree">Cử nhân Hệ thống thông tin quản lý</div>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-h">Chứng chỉ</div>
+      <div class="skill-group">
+        <div class="sg-title">Anthropic Education · 2026</div>
+        <ul>
+          <li><a href="https://verify.skilljar.com/c/pqbatgscu45p" style="color:inherit;text-decoration:none">AI Fluency: Framework &amp; Foundations ↗</a></li>
+          <li><a href="https://verify.skilljar.com/c/qtfq2hedczez" style="color:inherit;text-decoration:none">Claude 101 ↗</a></li>
+          <li><a href="https://verify.skilljar.com/c/di9u3qqmf2bd" style="color:inherit;text-decoration:none">Claude Code 101 ↗</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header>
+      <div class="name">HỒ ĐẮC QUANG</div>
+      <div class="role">Phân tích Nghiệp vụ &amp; Quản lý Triển khai Phần mềm</div>
+      <div class="name-rule"></div>
+    </header>
+
+    <section class="m-section">
+      <div class="m-h"><span class="bar"></span>Mục tiêu nghề nghiệp</div>
+      <p class="summary">
+        Hơn <b>5 năm kinh nghiệm</b> trong ngành CNTT, tôi đã đồng hành cùng nhiều dự án chuyển đổi số
+        ở đa dạng vai trò — từ phân tích nghiệp vụ đến điều phối và triển khai. Tôi tập trung
+        <b>xây dựng các giải pháp vận hành hiệu quả</b> và <b>đưa AI vào quy trình phát triển sản phẩm</b>,
+        với mong muốn không ngừng nâng cao chuyên môn và tạo giá trị bền vững cho tổ chức.
+      </p>
+    </section>
+
+    <section class="m-section">
+      <div class="m-h"><span class="bar"></span>Kinh nghiệm làm việc</div>
+      <div class="xp">
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Business Analyst cum Product Engineer</div>
+            <div class="job-date">10/2025 – Hiện tại</div>
+          </div>
+          <div class="job-co">CTCP Hasaki Việt Nam — R&amp;D Product Team</div>
+          <div class="proj-label">Dự án tiêu biểu</div>
+          <div class="proj-desc">Fulfillment Service — Hệ thống hoàn tất đơn hàng B2B.</div>
+          <ul>
+            <li>Nghiên cứu và ứng dụng AI (Claude) vào quy trình phân tích &amp; phát triển sản phẩm: phân tích yêu cầu, soạn đặc tả chức năng, thiết kế prompt/AI Agent và sinh tài liệu.</li>
+            <li>Tham gia xây dựng nền tảng Fulfillment (3PL) đa nghiệp vụ từ giai đoạn đầu, chuẩn hóa quy trình kho – đơn hàng – khách hàng.</li>
+            <li>Khảo sát vận hành thực tế; phân tích &amp; thiết kế quy trình nghiệp vụ hệ thống (WMS/OMS) và mô hình hóa các luồng xử lý.</li>
+            <li>Phối hợp BOM, PO, UI/UX, Dev, QC theo Agile/Scrum để đảm bảo tiến độ &amp; mục tiêu mỗi sprint.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Chuyên viên Phân tích Nghiệp vụ &amp; Quản lý Dự án</div>
+            <div class="job-date">07/2024 – 09/2025</div>
+          </div>
+          <div class="job-co">CTCP TM &amp; DV Quốc tế THISO (THACO Group) — IT Department</div>
+          <div class="proj-label">Dự án tiêu biểu</div>
+          <div class="proj-tags">
+            <span>ERP</span>
+            <span>QL Cung ứng – Thiskyhall</span>
+            <span>Vận hành F&amp;B – RedJunk, Cafe Beso</span>
+            <span>QL &amp; Bảo dưỡng thiết bị – Thiso Mall</span>
+            <span>QL Hành chính</span>
+            <span>QL Nhân sự – Thiskyhall</span>
+            <span>CRM-Loyalty Thiso</span>
+          </div>
+          <ul>
+            <li>Khảo sát, phỏng vấn các phòng ban; phân tích nghiệp vụ và biên soạn tài liệu giải pháp (BRD/SRS, sơ đồ luồng quy trình).</li>
+            <li>Chịu trách nhiệm phân tích &amp; triển khai các hệ thống nội bộ tự phát triển; quản lý dự án, theo sát tiến độ đối với các dự án mua từ nhà cung cấp.</li>
+            <li>Phân tích quy trình liên phòng ban, đề xuất tái cấu trúc phục vụ chuyển đổi số.</li>
+            <li>Xây dựng kế hoạch triển khai ERP; tổ chức đào tạo, UAT, quản lý thay đổi và hỗ trợ vận hành; báo cáo tiến độ cho các cấp lãnh đạo.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Trưởng nhóm Triển khai Phần mềm</div>
+            <div class="job-date">12/2022 – 05/2024</div>
+          </div>
+          <div class="job-co">CTCP Tài nguyên Tri thức Việt Năng (VNRESOURCE)</div>
+          <div class="proj-label">Dự án tiêu biểu · Triển khai HRM</div>
+          <div class="proj-tags">
+            <span>Cty TNHH LongHuei Vietnam</span>
+            <span>CTCP Chứng khoán VietCap</span>
+          </div>
+          <ul>
+            <li>Thu thập, phân tích yêu cầu và tư vấn giải pháp; biên soạn tài liệu triển khai (BRD/SRS, sơ đồ quy trình).</li>
+            <li>Thiết kế &amp; thực hiện chuyển đổi dữ liệu (data migration) từ hệ thống cũ sang HRM, đảm bảo toàn vẹn dữ liệu.</li>
+            <li>Quản lý nhóm triển khai, theo dõi tiến độ và kiểm soát rủi ro; hỗ trợ UAT, go-live &amp; stabilization.</li>
+            <li>Đào tạo, dẫn dắt người dùng và quản lý thay đổi trong quá trình vận hành.</li>
+            <li>Hỗ trợ vận hành sản phẩm sau triển khai.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Nhân viên Triển khai Phần mềm</div>
+            <div class="job-date">03/2021 – 11/2022</div>
+          </div>
+          <div class="job-co">CTCP Tài nguyên Tri thức Việt Năng (VNRESOURCE)</div>
+          <div class="proj-label">Dự án tiêu biểu · Triển khai HRM</div>
+          <div class="proj-tags">
+            <span>Cty TNHH May Thêu Giày An Phước</span>
+            <span>Tập đoàn May Thêu Thuận Phương</span>
+          </div>
+          <ul>
+            <li>Triển khai phần mềm HRM; hỗ trợ UAT, go-live và người dùng trong quá trình vận hành.</li>
+            <li>Phối hợp cùng team Product để phân tích &amp; xử lý yêu cầu người dùng.</li>
+            <li>Hỗ trợ vận hành sản phẩm sau triển khai.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div class="job-title">Chuyên viên Phân tích Nghiệp vụ</div>
+            <div class="job-date">08/2020 – 12/2020</div>
+          </div>
+          <div class="job-co">CTCP Hệ thống Thông tin FPT (FIS)</div>
+          <ul>
+            <li>Thu thập yêu cầu; thiết kế workflow, use-case và tài liệu hệ thống.</li>
+            <li>Phối hợp với Dev để xây dựng tính năng.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>
+
+<p class="hint">💡 Xuất PDF: nhấn <b>Ctrl + P</b> → <b>"Save as PDF"</b> → Margins: <b>None</b> · bật <b>Background graphics</b>. (Dòng này không hiện trong PDF)</p>
+
+</body>
+</html>
