@@ -94,18 +94,24 @@
   .hint{max-width:210mm;margin:8px auto 22px;font-size:12px;color:#5b6470;text-align:center}
   @media print{.hint{display:none}}
 
-  .lang-switch{position:fixed;top:14px;right:14px;z-index:99;display:flex;background:#fff;border:1px solid #d6dce3;border-radius:999px;box-shadow:0 3px 12px rgba(20,30,45,.18);overflow:hidden;font-family:"Segoe UI",Roboto,Arial,sans-serif}
+  .topbar{position:fixed;top:14px;right:14px;z-index:99;display:flex;gap:8px;align-items:center;font-family:"Segoe UI",Roboto,Arial,sans-serif}
+  .lang-switch{display:flex;background:#fff;border:1px solid #d6dce3;border-radius:999px;box-shadow:0 3px 12px rgba(20,30,45,.18);overflow:hidden}
   .lang-switch a{padding:7px 16px;font-size:12px;font-weight:700;letter-spacing:.6px;color:#5b6470;text-decoration:none;transition:background .15s,color .15s}
   .lang-switch a.active{background:var(--teal);color:#fff}
   .lang-switch a:not(.active):hover{background:#eef6f7;color:var(--teal)}
-  @media print{.lang-switch{display:none}}
+  .pdf-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;font-size:12px;font-weight:700;letter-spacing:.5px;color:#fff;background:var(--navy);border:none;border-radius:999px;box-shadow:0 3px 12px rgba(20,30,45,.18);cursor:pointer;font-family:inherit;transition:background .15s}
+  .pdf-btn:hover{background:var(--teal)}
+  @media print{.topbar{display:none}}
 </style>
 </head>
 <body>
 
-<div class="lang-switch">
-  <a href="index.html" class="active">VN</a>
-  <a href="en.html">EN</a>
+<div class="topbar">
+  <button class="pdf-btn" onclick="window.print()">⬇ Tải PDF</button>
+  <div class="lang-switch">
+    <a href="index.html" class="active">VN</a>
+    <a href="en.html">EN</a>
+  </div>
 </div>
 
 <div class="page">
